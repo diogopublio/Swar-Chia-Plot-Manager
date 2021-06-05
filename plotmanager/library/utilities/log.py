@@ -23,6 +23,8 @@ def _analyze_log_end_date(contents):
     total_seconds, date_raw = match.groups()
     total_seconds = pretty_print_time(int(float(total_seconds)))
     parsed_date = dateparser.parse(date_raw)
+    if parsed_date is None:
+        parsed_date = datetime.strptime(date_raw, '%b %d %H:%M:%S %Y')    
     return dict(
         total_seconds=total_seconds,
         date=parsed_date,
