@@ -4,6 +4,8 @@ import os
 import psutil
 import re
 import socket
+from datetime import datetime
+
 
 from plotmanager.library.utilities.instrumentation import increment_plots_completed
 from plotmanager.library.utilities.notifications import send_notifications
